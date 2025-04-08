@@ -157,6 +157,7 @@ CORS_ALLOW_HEADERS = [
 CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:5500',
     'http://kringeproduction.ru',
+    'https://kringeproduction.ru',
     'https://kptube.kringeproduction.ru'
 ]
 REST_FRAMEWORK = {
