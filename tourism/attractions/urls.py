@@ -4,11 +4,10 @@ from rest_framework.routers import DefaultRouter
 from .views import AttractionViewSet
 
 router = DefaultRouter()
-router.register('attractions', AttractionViewSet)
+router.register('api', AttractionViewSet)
 
 
 urlpatterns = [
-    path('api/', admin.site.urls),
 ]
 
 urlpatterns += router.urls
