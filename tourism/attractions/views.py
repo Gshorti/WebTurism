@@ -1,3 +1,4 @@
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from .serializers import AttractionSerializer
 from .models import Attraction
@@ -25,6 +26,6 @@ class AttractionViewSet(ModelViewSet):
             for tag in item["tags"]:
                 for filter_tag in tags:
                     if filter_tag == tag:
-                        res.append(True)
-        response.data.append(res)
-        return response
+                        if item not in res:
+                            res.append(item)
+        return Response(res)
