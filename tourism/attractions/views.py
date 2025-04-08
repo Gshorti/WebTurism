@@ -23,6 +23,8 @@ class AttractionViewSet(ModelViewSet):
         res = []
         for item in response.data:
             for tag in item["tags"]:
-                res.append(tag)
+                for filter_tag in tags:
+                    if filter_tag == tag:
+                        res.append(True)
         response.data.append(res)
         return response
