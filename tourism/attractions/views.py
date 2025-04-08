@@ -19,13 +19,5 @@ class AttractionViewSet(ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         response = super().list(request, *args, **kwargs)
-        tags = request.GET["tags"]
-        tags = tags.split(',')
-        res = []
-        for item in response.data:
-            for tag in item["tags"]:
-                for filter_tag in tags:
-                    if filter_tag == tag:
-                        if item not in res:
-                            res.append(item)
+        res = TagFilter(request, response)
         return Response(res)
