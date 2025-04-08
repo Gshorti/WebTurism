@@ -18,5 +18,5 @@ class AttractionViewSet(ModelViewSet):
 
     def list(self, request, *args, **kwargs):
         response = super().list(request, *args, **kwargs)
-        TagFilter(request)
+        TagFilter(request, response)
         return response
