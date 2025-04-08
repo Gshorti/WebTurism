@@ -3,7 +3,7 @@ from .serializers import AttractionSerializer
 from .models import Attraction
 from rest_framework.filters import SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
-
+from .filters import TagFilter
 # Create your views here.
 
 class AttractionViewSet(ModelViewSet):
@@ -17,5 +17,6 @@ class AttractionViewSet(ModelViewSet):
     ordering_fields = ['id']
 
     def list(self, request, *args, **kwargs):
-        print(type(self.queryset))
-        return super().list(request, *args, **kwargs)
+        response = super().list(request, *args, **kwargs)
+        TagFilter(request)
+        return response
