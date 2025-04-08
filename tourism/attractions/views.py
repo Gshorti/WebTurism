@@ -21,7 +21,7 @@ class AttractionViewSet(ModelViewSet):
         tags = request.GET["tags"]
         tags = tags.split(',')
         res = []
-        for item in response:
+        for item in response.data:
             for tag in item["tags"]:
                 res.append(tag)
         response.data.append(res)
