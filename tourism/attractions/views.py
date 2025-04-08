@@ -15,3 +15,7 @@ class AttractionViewSet(ModelViewSet):
     filterset_fields = ['name', 'price']
     search_fields = ['name', 'description', 'address', 'price']
     ordering_fields = ['id']
+
+    def list(self, request, *args, **kwargs):
+        print(request.GET["tags"])
+        return super().list(request, *args, **kwargs)
