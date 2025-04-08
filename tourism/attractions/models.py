@@ -7,3 +7,5 @@ class Attraction(models.Model):
     description = models.TextField(null=False, blank=False)
     map = models.JSONField(null=False, default=dict, blank=True)
     image = models.FileField(upload_to="images",null=False)
+    tags = models.JSONField(null=False, blank=True, default=list)
+    price = models.IntegerField(blank=True)
