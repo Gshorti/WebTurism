@@ -9,7 +9,6 @@ def TagFilter(request, response):
                     if filter_tag == tag:
                         if item not in res:
                             res.append(item)
-
         return res
     else:
         return response.data
