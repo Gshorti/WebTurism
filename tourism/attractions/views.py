@@ -17,5 +17,5 @@ class AttractionViewSet(ModelViewSet):
     ordering_fields = ['id']
 
     def list(self, request, *args, **kwargs):
-        print(type(request.GET["tags"]))
+        print(type(self.queryset))
         return super().list(request, *args, **kwargs)
