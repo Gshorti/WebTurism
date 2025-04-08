@@ -6,7 +6,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 
-class AttractionViewSet(ModelViewSet):
+class ObjectViewSet(ModelViewSet):
     authentication_classes = []
     permission_classes = []
     queryset = Objects.objects.all()
