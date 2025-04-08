@@ -9,4 +9,4 @@ class Attraction(models.Model):
     image = models.FileField(upload_to="images",null=False)
     tags = models.JSONField(null=False, blank=True, default=list)
     price = models.IntegerField(blank=True)
-    time = models.DateTimeField(null=False, blank=False)
+    time = models.DateTimeField(null=True, blank=False)
