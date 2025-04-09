@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'attractions',
     'objects',
+    'compilations',
 ]
 
 MIDDLEWARE = [
